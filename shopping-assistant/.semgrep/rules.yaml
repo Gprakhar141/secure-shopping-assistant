@@ -1,0 +1,11 @@
+rules:
+  - id: hardcoded-google-api-key
+    languages:
+      - python
+    message: |
+      Security Warning: Detected a hardcoded Google API key starting with 'AIzaSy'.
+      Hardcoded credentials are a severe security risk. Please remove this key and
+      use environment variables, a secrets manager, or an appropriate identity provider.
+    severity: ERROR
+    patterns:
+      - pattern-regex: "AIzaSy[A-Za-z0-9_\\-]*"
